@@ -69,7 +69,10 @@ namespace BookLibrary
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (HttpContext.Current.User.IsInRole("Administrator"))
+            {
+                adminBooks.Visible = true;
+            }
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

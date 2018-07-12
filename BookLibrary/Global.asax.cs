@@ -1,4 +1,5 @@
-﻿using BookLibrary.Models;
+﻿using BookLibrary.Logic;
+using BookLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -20,6 +21,9 @@ namespace BookLibrary
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             Database.SetInitializer(new BookLibraryDatabaseInitializer());
+
+            RoleActions roleActions = new RoleActions();
+            roleActions.createAdmin();
         }
     }
 }

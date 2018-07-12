@@ -178,6 +178,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.aspx" />
     <Content Include="About.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
@@ -194,6 +195,9 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Admin\AdminBooks.aspx" />
+    <Content Include="Admin\AddBook.aspx" />
+    <Content Include="Admin\EditBook.aspx" />
     <Content Include="BookCategories.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -211,6 +215,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <EmbeddedResource Include="Models\SeedData\BookCategories.csv" />
+    <Content Include="Admin\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -247,6 +252,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\AddPhoneNumber.aspx.cs">
       <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -352,6 +364,27 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AdminBooks.aspx.cs">
+      <DependentUpon>AdminBooks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminBooks.aspx.designer.cs">
+      <DependentUpon>AdminBooks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddBook.aspx.cs">
+      <DependentUpon>AddBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddBook.aspx.designer.cs">
+      <DependentUpon>AddBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditBook.aspx.cs">
+      <DependentUpon>EditBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditBook.aspx.designer.cs">
+      <DependentUpon>EditBook.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -387,6 +420,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logic\AddBooks.cs" />
+    <Compile Include="Logic\DeleteBooks.cs" />
+    <Compile Include="Logic\EditBooks.cs" />
+    <Compile Include="Logic\RoleActions.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\BookCategory.cs" />

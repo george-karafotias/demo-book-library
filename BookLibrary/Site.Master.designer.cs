@@ -13,6 +13,15 @@ namespace BookLibrary {
     public partial class SiteMaster {
         
         /// <summary>
+        /// adminBooks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor adminBooks;
+        
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>

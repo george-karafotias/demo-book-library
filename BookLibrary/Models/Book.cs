@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -8,7 +9,10 @@ namespace BookLibrary.Models
 {
     public class Book
     {
-        [Key, Display(Name = "ISBN")]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int BookID { get; set; }
+
+        [Display(Name = "ISBN")]
         public string ISBN { get; set; }
 
         [Required, Display(Name = "Title")]
@@ -17,11 +21,13 @@ namespace BookLibrary.Models
         [Required, Display(Name = "Category")]
         public int CategoryID { get; set; }
 
+        [ForeignKey("CategoryID")]
         public virtual BookCategory Category { get; set; }
 
         [Required, Display(Name = "Author")]
         public int AuthorID { get; set; }
 
+        [ForeignKey("AuthorID")]
         public virtual Author Author { get; set; }
 
         [Required, Display(Name = "Publisher")]
