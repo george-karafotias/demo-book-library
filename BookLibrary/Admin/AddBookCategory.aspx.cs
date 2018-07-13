@@ -12,7 +12,20 @@ namespace BookLibrary.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                ViewState["ReferrerUrl"] = Request.UrlReferrer.ToString();
+                BookCategoryName.Focus();
+            }
+        }
 
+        void ReturnToSender()
+        {
+            object referrer = ViewState["ReferrerUrl"];
+            if (referrer != null)
+                Response.Redirect((string)referrer);
+            else
+                Response.Redirect("Default.aspx");
         }
 
         protected void SaveBookCategoryButton_Click(object sender, EventArgs e)
@@ -21,7 +34,7 @@ namespace BookLibrary.Admin
             bool saveSuccess = bclogic.AddBookCategory(BookCategoryName.Text);
             if (saveSuccess)
             {
-                Response.Redirect("AdminBookCategories");
+                ReturnToSender();
             }
             else
             {

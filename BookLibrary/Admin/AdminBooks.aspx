@@ -5,6 +5,8 @@
     <div>
         <div>
             <asp:Button runat="server" OnClick="AddBookButton_Click" Text="Add Book" CssClass="btn btn-default"></asp:Button>
+            <asp:Button runat="server" OnClick="AddBookCategoryButton_Click" Text="Add Category" CssClass="btn btn-default"></asp:Button>
+            <asp:Button runat="server" OnClick="AddBookAuthorButton_Click" Text="Add Author" CssClass="btn btn-default"></asp:Button>
         </div>
         <asp:GridView runat="server" ID="Books" ItemType="BookLibrary.Models.Book" SelectMethod="GetBooks" AutoGenerateColumns="false" AllowSorting="true" AllowPaging="true" PageSize="5" CssClass="table table-striped table-bordered">
             <Columns>

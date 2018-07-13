@@ -16,6 +16,8 @@ namespace BookLibrary.Admin
             if (!IsPostBack)
             {
                 string errorPage = "~/404";
+                ViewState["ReferrerUrl"] = Request.UrlReferrer.ToString();
+
                 if (Request.Params.AllKeys.Contains("id"))
                 {
                     int bookID = Convert.ToInt32(Request["id"]);
@@ -50,13 +52,22 @@ namespace BookLibrary.Admin
             return query;
         }
 
+        void ReturnToSender()
+        {
+            object referrer = ViewState["ReferrerUrl"];
+            if (referrer != null)
+                Response.Redirect((string)referrer);
+            else
+                Response.Redirect("Default.aspx");
+        }
+
         protected void UpdateBookButton_Click(object sender, EventArgs e)
         {
             EditBooks editBooks = new EditBooks();
             bool saveSuccess = editBooks.UpdateBook(Convert.ToInt32(Request["id"]), ISBN.Text, BookTitle.Text, Category.SelectedValue, Author.SelectedValue, Publisher.Text, PublicationYear.Text, Price.Text);
             if (saveSuccess)
             {
-                Response.Redirect("AdminBooks");
+                ReturnToSender();
             }
             else
             {

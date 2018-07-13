@@ -73,6 +73,7 @@ namespace BookLibrary
             {
                 adminBooks.Visible = true;
                 adminBookCategories.Visible = true;
+                adminBookAuthors.Visible = true;
             }
         }
 

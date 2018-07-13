@@ -195,10 +195,13 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Admin\AddAuthor.aspx" />
     <Content Include="Admin\AddBookCategory.aspx" />
+    <Content Include="Admin\AdminBookAuthors.aspx" />
     <Content Include="Admin\AdminBookCategories.aspx" />
     <Content Include="Admin\AdminBooks.aspx" />
     <Content Include="Admin\AddBook.aspx" />
+    <Content Include="Admin\EditAuthor.aspx" />
     <Content Include="Admin\EditBook.aspx" />
     <Content Include="Admin\EditBookCategory.aspx" />
     <Content Include="BookCategories.aspx" />
@@ -367,12 +370,26 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AddAuthor.aspx.cs">
+      <DependentUpon>AddAuthor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddAuthor.aspx.designer.cs">
+      <DependentUpon>AddAuthor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AddBookCategory.aspx.cs">
       <DependentUpon>AddBookCategory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\AddBookCategory.aspx.designer.cs">
       <DependentUpon>AddBookCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminBookAuthors.aspx.cs">
+      <DependentUpon>AdminBookAuthors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminBookAuthors.aspx.designer.cs">
+      <DependentUpon>AdminBookAuthors.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\AdminBookCategories.aspx.cs">
       <DependentUpon>AdminBookCategories.aspx</DependentUpon>
@@ -394,6 +411,13 @@
     </Compile>
     <Compile Include="Admin\AddBook.aspx.designer.cs">
       <DependentUpon>AddBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditAuthor.aspx.cs">
+      <DependentUpon>EditAuthor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditAuthor.aspx.designer.cs">
+      <DependentUpon>EditAuthor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\EditBook.aspx.cs">
       <DependentUpon>EditBook.aspx</DependentUpon>
@@ -445,6 +469,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Logic\AddBooks.cs" />
+    <Compile Include="Logic\AuthorsLogic.cs" />
     <Compile Include="Logic\BookCategoriesLogic.cs" />
     <Compile Include="Logic\DeleteBooks.cs" />
     <Compile Include="Logic\EditBooks.cs" />

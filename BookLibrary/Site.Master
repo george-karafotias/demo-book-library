@@ -52,6 +52,7 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" id="adminBooks" visible="false" href="~/Admin/AdminBooks">Books</a></li>
                         <li><a runat="server" id="adminBookCategories" visible="false" href="~/Admin/AdminBookCategories">Categories</a></li>
+                        <li><a runat="server" id="adminBookAuthors" visible="false" href="~/Admin/AdminBookAuthors">Authors</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>

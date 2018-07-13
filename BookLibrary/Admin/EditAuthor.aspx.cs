@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace BookLibrary.Admin
 {
-    public partial class EditBookCategory : System.Web.UI.Page
+    public partial class EditAuthor : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,11 +20,11 @@ namespace BookLibrary.Admin
 
                 if (Request.Params.AllKeys.Contains("id"))
                 {
-                    int bookCategoryID = Convert.ToInt32(Request["id"]);
+                    int authorID = Convert.ToInt32(Request["id"]);
                     var db = new BookLibrary.Models.BookLibraryContext();
-                    BookCategory bookCategory = db.BookCategories.First(a => a.BookCategoryID == bookCategoryID);
-                    BookCategoryName.Text = bookCategory.BookCategoryName;
-                    BookCategoryName.Focus();
+                    Author author = db.Authors.First(a => a.AuthorID == authorID);
+                    AuthorName.Text = author.AuthorName;
+                    AuthorName.Focus();
                 }
                 else
                 {
@@ -42,17 +42,17 @@ namespace BookLibrary.Admin
                 Response.Redirect("Default.aspx");
         }
 
-        protected void UpdateBookCategoryButton_Click(object sender, EventArgs e)
+        protected void UpdateAuthorButton_Click(object sender, EventArgs e)
         {
-            BookCategoriesLogic bclogic = new BookCategoriesLogic();
-            bool saveSuccess = bclogic.UpdateBookCategory(Convert.ToInt32(Request["id"]), BookCategoryName.Text);
+            AuthorsLogic alogic = new AuthorsLogic();
+            bool saveSuccess = alogic.UpdateAuthor(Convert.ToInt32(Request["id"]), AuthorName.Text);
             if (saveSuccess)
             {
                 ReturnToSender();
             }
             else
             {
-                FailureText.Text = "Unable to update the book category.";
+                FailureText.Text = "Unable to update the author.";
                 ErrorMessage.Visible = true;
             }
         }

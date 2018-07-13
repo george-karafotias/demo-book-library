@@ -27,6 +27,16 @@ namespace BookLibrary.Admin
             Response.Redirect("AddBook.aspx");
         }
 
+        protected void AddBookCategoryButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddBookCategory.aspx");
+        }
+
+        protected void AddBookAuthorButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddAuthor.aspx");
+        }
+
         protected void EditBookButton_Click(Object sender, EventArgs e)
         {
             Button btn = (Button)sender;
