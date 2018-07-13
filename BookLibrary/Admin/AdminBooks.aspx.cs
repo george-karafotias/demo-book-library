@@ -1,4 +1,5 @@
 ﻿using BookLibrary.Logic;
+using BookLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace BookLibrary.Admin
         public IQueryable<BookLibrary.Models.Book> GetBooks()
         {
             var db = new BookLibrary.Models.BookLibraryContext();
-            return db.Books;
+            return db.Books.OrderBy(book => book.BookID);
         }
 
         protected void AddBookButton_Click(object sender, EventArgs e)
