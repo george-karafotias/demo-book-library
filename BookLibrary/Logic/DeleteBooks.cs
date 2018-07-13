@@ -11,11 +11,18 @@ namespace BookLibrary.Logic
     {
         public bool DeleteBook(int bookID)
         {
-            using (BookLibraryContext db = new BookLibraryContext())
+            try
             {
-                Book book = db.Books.SingleOrDefault(b => b.BookID == bookID);
-                db.Entry(book).State = EntityState.Deleted;
-                db.SaveChanges();
+                using (BookLibraryContext db = new BookLibraryContext())
+                {
+                    Book book = db.Books.SingleOrDefault(b => b.BookID == bookID);
+                    db.Entry(book).State = EntityState.Deleted;
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception exc)
+            {
+                return false;
             }
 
             return true;

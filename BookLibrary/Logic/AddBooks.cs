@@ -22,10 +22,17 @@ namespace BookLibrary.Logic
                 book.Price = Convert.ToDecimal(price);
             }
 
-            using (BookLibraryContext db = new BookLibraryContext())
+            try
             {
-                db.Books.Add(book);
-                db.SaveChanges();
+                using (BookLibraryContext db = new BookLibraryContext())
+                {
+                    db.Books.Add(book);
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception exc)
+            {
+                return false;
             }
 
             return true;
