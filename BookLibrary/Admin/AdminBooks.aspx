@@ -12,7 +12,7 @@
             <asp:Button runat="server" OnClick="ClearBtn_Click" Text="All Books" />
         </div>
         
-        <asp:GridView runat="server" ID="Books" ItemType="BookLibrary.Models.Book" AutoGenerateColumns="false" AllowSorting="true" AllowPaging="true" PageSize="5" CssClass="table table-striped table-bordered">
+        <asp:GridView runat="server" ID="Books" ItemType="BookLibrary.Models.Book" AutoGenerateColumns="false" AllowSorting="true" OnSorting="theGrid_Sorting" AllowPaging="true" PageSize="5" CssClass="table table-striped table-bordered">
             <Columns>
                 <asp:BoundField DataField="ISBN" HeaderText="ISBN" SortExpression="ISBN" />
                 <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />

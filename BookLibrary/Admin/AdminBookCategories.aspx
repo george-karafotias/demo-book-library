@@ -5,7 +5,7 @@
         <div>
             <asp:Button runat="server" ID="AddBookCategoryBtn" Text="Add Category" OnClick="AddBookCategoryBtn_Click" CssClass="btn btn-default" />
         </div>
-        <asp:GridView runat="server" ID="BookCategories" ItemType="BookLibrary.Models.BookCategory" SelectMethod="GetBookCategories" AutoGenerateColumns="false" AllowSorting="true" AllowPaging="true" PageSize="10" CssClass="table table-striped table-bordered">
+        <asp:GridView runat="server" ID="BookCategories" ItemType="BookLibrary.Models.BookCategory" SelectMethod="GetBookCategories" AutoGenerateColumns="false" AllowSorting="false" AllowPaging="true" PageSize="10" CssClass="table table-striped table-bordered">
             <Columns>
                 <asp:BoundField DataField="BookCategoryName" HeaderText="Name" SortExpression="BookCategoryName" />
                 <asp:TemplateField HeaderText="Functions">
