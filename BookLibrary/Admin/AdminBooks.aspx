@@ -7,8 +7,12 @@
             <asp:Button runat="server" OnClick="AddBookButton_Click" Text="Add Book" CssClass="btn btn-default"></asp:Button>
             <asp:Button runat="server" OnClick="AddBookCategoryButton_Click" Text="Add Category" CssClass="btn btn-default"></asp:Button>
             <asp:Button runat="server" OnClick="AddBookAuthorButton_Click" Text="Add Author" CssClass="btn btn-default"></asp:Button>
+            <asp:TextBox runat="server" ID="SearchText" CssClass="form-control" style="display:inline" placeholder="Search..." />
+            <asp:Button runat="server" OnClick="SearchBtn_Click" Text="Search" />
+            <asp:Button runat="server" OnClick="ClearBtn_Click" Text="All Books" />
         </div>
-        <asp:GridView runat="server" ID="Books" ItemType="BookLibrary.Models.Book" SelectMethod="GetBooks" AutoGenerateColumns="false" AllowSorting="true" AllowPaging="true" PageSize="5" CssClass="table table-striped table-bordered">
+        
+        <asp:GridView runat="server" ID="Books" ItemType="BookLibrary.Models.Book" AutoGenerateColumns="false" AllowSorting="true" AllowPaging="true" PageSize="5" CssClass="table table-striped table-bordered">
             <Columns>
                 <asp:BoundField DataField="ISBN" HeaderText="ISBN" SortExpression="ISBN" />
                 <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />

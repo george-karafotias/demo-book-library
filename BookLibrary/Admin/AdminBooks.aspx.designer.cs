@@ -13,6 +13,15 @@ namespace BookLibrary.Admin {
     public partial class AdminBooks {
         
         /// <summary>
+        /// SearchText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SearchText;
+        
+        /// <summary>
         /// Books control.
         /// </summary>
         /// <remarks>

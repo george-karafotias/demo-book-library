@@ -5,8 +5,12 @@
     <div>
         <div>
             <asp:Button runat="server" OnClick="AddAuthorButton_Click" Text="Add Author" CssClass="btn btn-default"></asp:Button>
+            <asp:TextBox runat="server" ID="SearchText" CssClass="form-control" style="display:inline" placeholder="Search..." />
+            <asp:Button runat="server" OnClick="SearchBtn_Click" Text="Search" />
+            <asp:Button runat="server" OnClick="ClearBtn_Click" Text="All Authors" />
         </div>
-        <asp:GridView runat="server" ID="BookAuthors" ItemType="BookLibrary.Models.Author" SelectMethod="GetBookAuthors" AutoGenerateColumns="false" AllowSorting="true" AllowPaging="true" PageSize="10" CssClass="table table-striped table-bordered">
+
+        <asp:GridView runat="server" ID="BookAuthors" ItemType="BookLibrary.Models.Author" AutoGenerateColumns="false" AllowSorting="true" AllowPaging="true" PageSize="10" CssClass="table table-striped table-bordered">
             <Columns>
                 <asp:BoundField DataField="AuthorName" HeaderText="Name" SortExpression="AuthorName" />
                 <asp:TemplateField HeaderText="Functions">

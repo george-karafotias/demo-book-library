@@ -13,14 +13,30 @@ namespace BookLibrary.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (!IsPostBack)
+            {
+                SetDefaultDataSource();
+            }
         }
 
-        public IQueryable<BookLibrary.Models.Book> GetBooks()
+        private List<Book> GetAllBooks()
         {
             var db = new BookLibrary.Models.BookLibraryContext();
-            return db.Books.OrderBy(book => book.BookID);
+            List<Book> books = db.Books.ToList();
+            return books;
         }
+
+        private void SetDefaultDataSource()
+        {
+            Books.DataSource = GetAllBooks();
+            Books.DataBind();
+        }
+
+        //public IQueryable<BookLibrary.Models.Book> GetBooks()
+        //{
+        //    var db = new BookLibrary.Models.BookLibraryContext();
+        //    return db.Books.OrderBy(book => book.BookID);
+        //}
 
         protected void AddBookButton_Click(object sender, EventArgs e)
         {
@@ -53,6 +69,23 @@ namespace BookLibrary.Admin
 
             if (savedChanges)
                 Response.Redirect("AdminBooks");
+        }
+
+        protected void SearchBtn_Click(object sender, EventArgs e)
+        {
+            string termToSearch = SearchText.Text;
+            if (!string.IsNullOrEmpty(termToSearch))
+            {
+                List<Book> books = GetAllBooks();
+                List<Book> filteredBooks = books.Where(book => book.ISBN.Contains(termToSearch) || book.Title.Contains(termToSearch) || book.Author.AuthorName.Contains(termToSearch) || book.Category.BookCategoryName.Contains(termToSearch) || book.Publisher.Contains(termToSearch) || book.PublicationYear == termToSearch).ToList();
+                Books.DataSource = filteredBooks;
+                Books.DataBind();
+            }
+        }
+
+        protected void ClearBtn_Click(object sender, EventArgs e)
+        {
+            SetDefaultDataSource();
         }
     }
 }
