@@ -10,7 +10,7 @@ using System.Web;
 
 namespace BookLibrary.Models
 {
-    public class BookLibraryDatabaseInitializer : DropCreateDatabaseIfModelChanges<BookLibraryContext>
+    public class BookLibraryDatabaseInitializer : DropCreateDatabaseAlways<BookLibraryContext>
     {
         protected override void Seed(BookLibraryContext context)
         {
@@ -21,8 +21,8 @@ namespace BookLibrary.Models
         private void InitializeAuthors(BookLibraryContext context)
         {
             List<Author> authors = new List<Author>();
-            authors.Add(new Author() { AuthorID = 1, AuthorName = "author1"});
-            authors.Add(new Author() { AuthorID = 2, AuthorName = "author2" });
+            authors.Add(new Author() { AuthorName = "author1"});
+            authors.Add(new Author() { AuthorName = "author2" });
             foreach (Author author in authors)
             {
                 context.Authors.Add(author);
@@ -39,6 +39,8 @@ namespace BookLibrary.Models
                 {
                     CsvReader csvReader = new CsvReader(reader);
                     csvReader.Configuration.HasHeaderRecord = true;
+                    csvReader.Configuration.HeaderValidated = null;
+                    csvReader.Configuration.MissingFieldFound = null;
                     var bookCategories = csvReader.GetRecords<BookCategory>().ToArray();
                     foreach (BookCategory bookCategory in bookCategories)
                     {

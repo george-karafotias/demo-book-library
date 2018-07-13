@@ -72,6 +72,7 @@ namespace BookLibrary
             if (HttpContext.Current.User.IsInRole("Administrator"))
             {
                 adminBooks.Visible = true;
+                adminBookCategories.Visible = true;
             }
         }
 
