@@ -47,6 +47,7 @@
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="PublicationYear" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="PublicationYear" CssClass="text-danger" ErrorMessage="The Publication Year field is required." Display="Dynamic" />
+                <asp:RegularExpressionValidator runat="server" ControlToValidate="PublicationYear" CssClass="text-danger" ValidationExpression="^[12][0-9]{3}$" Display="Dynamic" ErrorMessage="Please enter a valid publication year." />
             </div>
         </div>
         <div class="form-group">
