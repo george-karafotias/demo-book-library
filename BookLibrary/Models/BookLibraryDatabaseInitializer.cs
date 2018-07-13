@@ -10,7 +10,7 @@ using System.Web;
 
 namespace BookLibrary.Models
 {
-    public class BookLibraryDatabaseInitializer : DropCreateDatabaseAlways<BookLibraryContext>
+    public class BookLibraryDatabaseInitializer : DropCreateDatabaseIfModelChanges<BookLibraryContext>
     {
         protected override void Seed(BookLibraryContext context)
         {
