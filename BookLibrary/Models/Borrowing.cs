@@ -24,9 +24,13 @@ namespace BookLibrary.Models
         [ForeignKey("BookID")]
         public virtual Book Book { get; set; }
 
+        [Range(typeof(DateTime), "1/1/2013", "1/1/3000", ErrorMessage = "Please provide a borrowing start date after 1/1/2013")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         [Required, Display(Name = "From Date")]
         public DateTime From { get; set; }
 
+        [Range(typeof(DateTime), "1/1/2013", "1/1/3000", ErrorMessage = "Please provide a borrowing return date after 1/1/2013")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         [Display(Name = "Return Date")]
         public DateTime? To { get; set; }
     }

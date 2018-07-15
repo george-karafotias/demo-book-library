@@ -63,8 +63,8 @@ namespace BookLibrary.Admin
 
         protected void UpdateBookButton_Click(object sender, EventArgs e)
         {
-            EditBooks editBooks = new EditBooks();
-            bool saveSuccess = editBooks.UpdateBook(Convert.ToInt32(Request["id"]), ISBN.Text, BookTitle.Text, Category.SelectedValue, Author.SelectedValue, Publisher.Text, PublicationYear.Text, Price.Text);
+            BooksLogic bl = new BooksLogic();
+            bool saveSuccess = bl.UpdateBook(Convert.ToInt32(Request["id"]), ISBN.Text, BookTitle.Text, Category.SelectedValue, Author.SelectedValue, Publisher.Text, PublicationYear.Text, Price.Text);
             if (saveSuccess)
             {
                 ReturnToSender();

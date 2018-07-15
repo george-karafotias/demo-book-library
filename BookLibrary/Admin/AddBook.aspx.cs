@@ -44,8 +44,8 @@ namespace BookLibrary.Admin
 
         protected void SaveBookButton_Click(object sender, EventArgs e)
         {
-            AddBooks books = new AddBooks();
-            bool saveSuccess = books.AddBook(ISBN.Text, BookTitle.Text, Category.SelectedValue, Author.SelectedValue, Publisher.Text, PublicationYear.Text, Price.Text);
+            BooksLogic bl = new BooksLogic();
+            bool saveSuccess = bl.AddBook(ISBN.Text, BookTitle.Text, Category.SelectedValue, Author.SelectedValue, Publisher.Text, PublicationYear.Text, Price.Text);
             if (saveSuccess)
             {
                 ReturnToSender();

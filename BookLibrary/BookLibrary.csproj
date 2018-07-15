@@ -197,16 +197,19 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Admin\AddAuthor.aspx" />
     <Content Include="Admin\AddBookCategory.aspx" />
+    <Content Include="Admin\AddBorrowing.aspx" />
     <Content Include="Admin\AddMember.aspx" />
     <Content Include="Admin\AdminBookAuthors.aspx" />
     <Content Include="Admin\AdminBookCategories.aspx" />
     <Content Include="Admin\AdminBooks.aspx" />
     <Content Include="Admin\AddBook.aspx" />
+    <Content Include="Admin\AdminBorrowings.aspx" />
     <Content Include="Admin\AdminMembers.aspx" />
     <Content Include="Admin\EditAuthor.aspx" />
     <Content Include="Admin\EditBook.aspx" />
     <Content Include="Admin\EditBookCategory.aspx" />
     <Content Include="Admin\EditMember.aspx" />
+    <Content Include="Admin\ReturnBorrowing.aspx" />
     <Content Include="BookCategories.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -387,6 +390,13 @@
     <Compile Include="Admin\AddBookCategory.aspx.designer.cs">
       <DependentUpon>AddBookCategory.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AddBorrowing.aspx.cs">
+      <DependentUpon>AddBorrowing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddBorrowing.aspx.designer.cs">
+      <DependentUpon>AddBorrowing.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AddMember.aspx.cs">
       <DependentUpon>AddMember.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -422,6 +432,13 @@
     <Compile Include="Admin\AddBook.aspx.designer.cs">
       <DependentUpon>AddBook.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AdminBorrowings.aspx.cs">
+      <DependentUpon>AdminBorrowings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminBorrowings.aspx.designer.cs">
+      <DependentUpon>AdminBorrowings.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AdminMembers.aspx.cs">
       <DependentUpon>AdminMembers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -456,6 +473,13 @@
     </Compile>
     <Compile Include="Admin\EditMember.aspx.designer.cs">
       <DependentUpon>EditMember.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ReturnBorrowing.aspx.cs">
+      <DependentUpon>ReturnBorrowing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ReturnBorrowing.aspx.designer.cs">
+      <DependentUpon>ReturnBorrowing.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -494,11 +518,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Logic\AddBooks.cs" />
     <Compile Include="Logic\AuthorsLogic.cs" />
     <Compile Include="Logic\BookCategoriesLogic.cs" />
-    <Compile Include="Logic\DeleteBooks.cs" />
-    <Compile Include="Logic\EditBooks.cs" />
+    <Compile Include="Logic\BooksLogic.cs" />
+    <Compile Include="Logic\BorrowingsLogic.cs" />
     <Compile Include="Logic\MembersLogic.cs" />
     <Compile Include="Logic\RoleActions.cs" />
     <Compile Include="Models\Author.cs" />

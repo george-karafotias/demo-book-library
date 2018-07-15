@@ -7,63 +7,72 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BookLibrary {
+namespace BookLibrary.Admin {
     
     
-    public partial class SiteMaster {
+    public partial class ReturnBorrowing {
         
         /// <summary>
-        /// adminBooks control.
+        /// ErrorMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor adminBooks;
+        protected global::System.Web.UI.WebControls.PlaceHolder ErrorMessage;
         
         /// <summary>
-        /// adminBookCategories control.
+        /// FailureText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor adminBookCategories;
+        protected global::System.Web.UI.WebControls.Literal FailureText;
         
         /// <summary>
-        /// adminBookAuthors control.
+        /// Member control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor adminBookAuthors;
+        protected global::System.Web.UI.WebControls.TextBox Member;
         
         /// <summary>
-        /// adminMembers control.
+        /// Book control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor adminMembers;
+        protected global::System.Web.UI.WebControls.TextBox Book;
         
         /// <summary>
-        /// adminBorrowings control.
+        /// FromDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor adminBorrowings;
+        protected global::System.Web.UI.WebControls.TextBox FromDate;
         
         /// <summary>
-        /// MainContent control.
+        /// ToDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.TextBox ToDate;
+        
+        /// <summary>
+        /// dateValRegex control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator dateValRegex;
     }
 }

@@ -75,6 +75,7 @@ namespace BookLibrary
                 adminBookCategories.Visible = true;
                 adminBookAuthors.Visible = true;
                 adminMembers.Visible = true;
+                adminBorrowings.Visible = true;
             }
         }
 

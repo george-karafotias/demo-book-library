@@ -181,8 +181,8 @@ namespace BookLibrary.Admin
         {
             Button btn = (Button)sender;
             string bookID = btn.CommandArgument.ToString();
-            DeleteBooks deleteBooks = new DeleteBooks();
-            bool savedChanges = deleteBooks.DeleteBook(Convert.ToInt32(bookID));
+            BooksLogic bl = new BooksLogic();
+            bool savedChanges = bl.DeleteBook(Convert.ToInt32(bookID));
 
             if (savedChanges)
                 Response.Redirect("AdminBooks");

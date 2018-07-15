@@ -18,6 +18,7 @@
                 <asp:TemplateField HeaderText="Functions">
                     <ItemTemplate>
                         <asp:Button runat="server" ID="EditMemberBtn" OnClick="EditMemberButton_Click" CommandArgument="<%# BindItem.MemberID %>" Text="Edit" CssClass="btn btn-default"></asp:Button>
+                        <asp:Button runat="server" ID="AddBorrowingBtn" OnClick="AddBorrowingButton_Click" CommandArgument="<%# BindItem.MemberID %>" Text="Borrow" CssClass="btn btn-default"></asp:Button>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

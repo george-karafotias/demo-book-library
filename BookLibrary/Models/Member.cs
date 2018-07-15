@@ -24,6 +24,9 @@ namespace BookLibrary.Models
         [Required, Display(Name = "Email")]
         public string Email { get; set; }
 
+        [NotMapped]
+        public string DisplayName => $"{FirstName} {LastName}";
+
         public virtual ICollection<Borrowing> Borrowings { get; set; }
     }
 }

@@ -55,5 +55,12 @@ namespace BookLibrary.Admin
             ViewState["SearchText"] = "";
             Members.DataBind();
         }
+
+        protected void AddBorrowingButton_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string memberID = btn.CommandArgument.ToString();
+            Response.Redirect("AddBorrowing.aspx?memberID=" + memberID);
+        }
     }
 }

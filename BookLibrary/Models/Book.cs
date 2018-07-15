@@ -38,5 +38,8 @@ namespace BookLibrary.Models
 
         [Display(Name = "Price")]
         public decimal Price { get; set; }
+
+        [NotMapped]
+        public string DisplayName => $"{ISBN} {Title}";
     }
 }
