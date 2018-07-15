@@ -4,9 +4,12 @@
     <div>
         <div>
             <asp:Button runat="server" ID="AddMemberBtn" OnClick="AddMemberBtn_Click" Text="Add Member" CssClass="btn btn-default"></asp:Button>
+            <asp:TextBox runat="server" ID="SearchText" CssClass="form-control" onkeydown="return (event.keyCode!=13)" style="display:inline" placeholder="Search..." />
+            <asp:Button runat="server" OnClick="SearchBtn_Click" Text="Search" />
+            <asp:Button runat="server" OnClick="ClearBtn_Click" Text="All Members" />
         </div>
 
-        <asp:GridView runat="server" ID="Members" ItemType="BookLibrary.Models.Member" AllowSorting="true" AllowPaging="true" SelectMethod="Members_GetData" AutoGenerateColumns="false" CssClass="table table-striped table-bordered">
+        <asp:GridView runat="server" ID="Members" ItemType="BookLibrary.Models.Member" AllowSorting="true" AllowPaging="true" SelectMethod="Members_GetData" DataKeyNames="MemberID" AutoGenerateColumns="false" CssClass="table table-striped table-bordered">
             <Columns>
                 <asp:BoundField DataField="FirstName" HeaderText="Name" SortExpression="FirstName" />
                 <asp:BoundField DataField="LastName" HeaderText="Last Name" SortExpression="LastName" />
