@@ -5,7 +5,7 @@
     <div>
         <div>
             <asp:Button runat="server" OnClick="AddAuthorButton_Click" Text="Add Author" CssClass="btn btn-default"></asp:Button>
-            <asp:TextBox runat="server" ID="SearchText" CssClass="form-control" style="display:inline" placeholder="Search..." />
+            <asp:TextBox runat="server" ID="SearchText" CssClass="form-control" onkeydown="return (event.keyCode!=13)" style="display:inline" placeholder="Search..." />
             <asp:Button runat="server" OnClick="SearchBtn_Click" Text="Search" />
             <asp:Button runat="server" OnClick="ClearBtn_Click" Text="All Authors" />
         </div>

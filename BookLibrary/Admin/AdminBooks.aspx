@@ -7,7 +7,7 @@
             <asp:Button runat="server" OnClick="AddBookButton_Click" Text="Add Book" CssClass="btn btn-default"></asp:Button>
             <asp:Button runat="server" OnClick="AddBookCategoryButton_Click" Text="Add Category" CssClass="btn btn-default"></asp:Button>
             <asp:Button runat="server" OnClick="AddBookAuthorButton_Click" Text="Add Author" CssClass="btn btn-default"></asp:Button>
-            <asp:TextBox runat="server" ID="SearchText" CssClass="form-control" style="display:inline" placeholder="Search..." />
+            <asp:TextBox runat="server" ID="SearchText" CssClass="form-control" onkeydown="return (event.keyCode!=13)" style="display:inline" placeholder="Search..." />
             <asp:Button runat="server" OnClick="SearchBtn_Click" Text="Search" />
             <asp:Button runat="server" OnClick="ClearBtn_Click" Text="All Books" />
         </div>
